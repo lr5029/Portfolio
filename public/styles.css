@@ -1,0 +1,127 @@
+/*
+  Ran(Lauren) Liao
+  11/17/2020
+  AF Wilson Tang
+
+  This is the style.css file for style of applied in both the index.html and resume.html
+  of my Portfolio, including both general layout design and specific typography for each page.
+  It is used by all pages in my portfolio to give the site a consistent look and feel.
+*/
+
+/* General setup */
+/*
+  background image is from
+  http://blog.hostbaby.com/2014/03/10-free-website-background-images-for-spring/
+*/
+body {
+  background-image: url("img/background2.png");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 20px;
+}
+
+section {
+  margin: 0 auto;
+  padding: 15px;
+}
+
+main > section {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 30px;
+  border-top: 10px #f3f3f3;
+  border-top-style: dotted;
+}
+
+header, section section, form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header, #favourite > section > section {
+  flex-direction: column;
+}
+
+textarea {
+  margin: 8px;
+}
+
+/* Typography */
+h1, h2, h3, h4, #todo, footer, p {
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: 'Coda Caption', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 20px 15px 20px #551755;
+  color: white;
+}
+
+h1 {
+  font-size: 120px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+p, ul {
+  line-height: 1.5;
+}
+
+hr {
+  height: 3px;
+  background-color: white;
+}
+
+/* images setup */
+img {
+  width: 350px;
+  height: 400px;
+  border-radius: 10%;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.finished {
+  color: gray;
+  text-decoration: line-through;
+}
+
+#favourite > section > section {
+  margin: 15px;
+  height: 425px;
+  width: 400px;
+}
+
+#favourite img {
+  width: 300px;
+  height: 300px;
+}
+
+#favourite p {
+  text-decoration: underline;
+}
+
+#drawing section, #favourite > section {
+  justify-content: space-evenly;
+}
+
+#todo > section {
+  display: block;
+}
+
+#response h4 {
+  width: 100%;
+  text-decoration: overline;
+}
