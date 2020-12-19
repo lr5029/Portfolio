@@ -6,7 +6,7 @@
 - Node.js for writing your own API.
 - SQL for providing data persistence in a relational database.
 
-Website available at http://localhost:8000/Portfolio/public/
+Website available at http://localhost:8000/index.html
 
 ## Final Deliverables:
 | File        | Description |
