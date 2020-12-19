@@ -2,8 +2,6 @@
 The Node API provides record of users' input and to be able to interact with users themselves with
 greeting or feedback received message
 
-**Endpoint:** http://localhost:8000
-
 ## Get a welcome message
 **Request Format:** /portfolio/welcome/:first?year={number}
 
