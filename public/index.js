@@ -15,7 +15,6 @@
 
   // MODULE GLOBAL VARIABLES, CONSTANTS, AND HELPER FUNCTIONS CAN BE PLACED HERE
   const BASE_URL = "https://api.icndb.com/jokes/random";
-  const APP_URL = "http://localhost:8000/portfolio/";
 
   /**
    * Add a function that will be called when the window is loaded.
@@ -33,6 +32,7 @@
    */
   function init() {
     // THIS IS THE CODE THAT WILL BE EXECUTED ONCE THE WEBPAGE LOADS
+    window.localStorage.clear();
     qs("#intro button").addEventListener("click", welcome);
 
     id("input-form").addEventListener("submit", function(event) {
@@ -87,19 +87,22 @@
    * after all HTML5 validation constraints (e.g. required attributes) have passed.
    */
   function submitRequest() {
-    qs("#feedback button").disabled = true;
     let result = gen("p");
     result.id = "results";
     id("feedback").appendChild(result);
 
-    let url = APP_URL + "feedback";
     let params = new FormData(id("input-form"));
-
-    fetch(url, {method: "POST", body: params})
-      .then(checkStatus)
-      .then(resp => resp.json())
-      .then(showResponse)
-      .catch(handleResError);
+    if (window.localStorage.getItem("name") === null) {
+      id("results").textContent = "You may want to enter your name first"
+    } else {
+      qs("#feedback button").disabled = true;
+      params.append("name", window.localStorage.getItem("name"));
+      fetch("/portfolio/feedback", {method: "POST", body: params})
+        .then(checkStatus)
+        .then(resp => resp.json())
+        .then(showResponse)
+        .catch(handleResError);
+    }
   }
 
   /**
@@ -119,18 +122,23 @@
    * Upon success, say hello to user with the name and favourite year they provide.
    */
   function welcome() {
-    qs("#intro button").disabled = true;
-    let name = id("fname").value;
     let year = id("year").value;
     let sentence = gen("h3");
     id("welcome").innerHTML = "";
     id("welcome").appendChild(sentence);
-    let url = APP_URL + "welcome/" + name + "?year=" + year;
-    fetch(url)
-      .then(checkStatus)
-      .then(resp => resp.text())
-      .then(updateIntro)
-      .catch(handleError);
+    let name = id("fname").value.trim();
+    if (name === "") {
+      qs("#welcome h3").textContent = "Error: please enter a valid user name";
+    } else {
+      qs("#intro button").disabled = true;
+      window.localStorage.setItem("name", name);
+      let url = "/portfolio/welcome/" + name + "?year=" + year;
+      fetch(url)
+        .then(checkStatus)
+        .then(resp => resp.text())
+        .then(updateIntro)
+        .catch(handleError);
+    }
   }
 
   /**
@@ -251,7 +259,7 @@
    */
   function handleResError(err) {
     id("results").textContent = "There was an error requesting data from the Node service: " +
-      err.message;
+      JSON.parse(err.message).error;
     qs("#feedback button").disabled = false;
   }
 
