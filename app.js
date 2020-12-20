@@ -57,7 +57,7 @@ app.post("/portfolio/feedback", async (req, res) => {
   let suggestion = req.body.suggestion;
   let firstName = req.body.name;
   if (!suggestion || !firstName) {
-    res.status(CLIENT_ERROR_CODE).json({"error": "Missing required parameter."});
+    res.status(CLIENT_ERROR_CODE).json({"error": "Missing required parameters."});
   } else {
     try {
       const db = await getDBConnection();
