@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+  ***
+  Ran(Lauren) Liao
+  11/17/2020
+  AF Wilson Tang
+
+  This is the index.html page for non-academic part of my portfolio. It includes
+  some general information about me, welcoming client section, receiving feedback section,
+  joke of day section with desire number, things planned and done in the year of 2020,
+  my favorite things like animals, sports, quotes, etc
+  ***
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
+    <title>CP2</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Welcome</h1>
+      <blockquote cite="https://www.keepinspiring.me/famous-quotes/">
+        To love and be loved is to feel the sun from both sides, <cite>David Viscott</cite>
+      </blockquote>
+    </header>
+    <main>
+      <section id="intro">
+        <h2>Hello</h2>
+        <section>
+          <label for="fname">What is your first name?</label>
+          <input type="text" name="fname" id="fname" required>
+        </section>
+        <section>
+          <label for="year">Which year do you like the most?</label>
+          <input type="text" name="year" id="year">
+        </section>
+        <section>
+          <button>Get</button>
+        </section>
+        <section id="welcome"></section>
+      </section>
+
+      <section id="feedback">
+        <h2>Feedback</h2>
+        <h3>Tell me any suggestion or idea about my page if any</h3>
+        <p>Enter when you are done (Don't lose your message!)</p>
+        <section>
+          <form id="input-form">
+            <textarea name="bckgound" minlength="5" rows="5" placeholder="background..."></textarea>
+            <textarea name="content" minlength="5" rows="5" placeholder="content..."></textarea>
+            <textarea name="layout" minlength="5" rows="5" placeholder="layout/color..."></textarea>
+            <textarea name="suggestion" minlength="5" rows="5" required
+              placeholder="Any suggestion?"></textarea>
+            <textarea name="idea" minlength="2" rows="5" placeholder="Other ideas?"></textarea>
+            <button id="submit-btn">Enter</button>
+          </form>
+        </section>
+      </section>
+
+      <section>
+        <h2>Who Am I?</h2>
+        <section>
+          <img src="img/image.jpg" alt="me in the high school valedictory">
+          <p>
+            I am Ran Liao, a junior student studying at University of Washington.<br>
+            My hometown is Guangzhou, China, a place well-known for its delicious foods.<br>
+            I grew up there and studied in Vancouver, Canada for three-year high school,
+            then moved to Seattle, WA for college.<br>
+            I am curious about many different things, including culture and luckily,
+            I have experienced a few by the age of 20.<br>
+          </p>
+        </section>
+      </section>
+
+      <section id="joke">
+        <h2>Jokes of the Day</h2>
+        <h3>Get random joke with specified number</h3>
+        <!-- from http://www.icndb.com/api/ -->
+        <section>
+          <label for="number">Number of Jokes:</label>
+          <input type="text" name="number" id="number">
+          <button>Get</button>
+        </section>
+        <h4>Joke(s)</h4>
+        <section id="response"></section>
+      </section>
+
+      <section id="todo">
+        <h2>To Do List</h2>
+        <h3>Caution: lost if page be refreshed or reopened</h3>
+        <h4>Click any accomplished event to have it crossed out</h4>
+        <section>
+          <label for="item">Enter a new plan:</label>
+          <input type="text" name="item" id="item">
+          <button>Add</button>
+          <ul></ul>
+        </section>
+      </section>
+
+      <section id="plan">
+        <h2>My Plans</h2>
+        <h3>Click any accomplished event to have it crossed out</h3>
+        <section>
+          <ul>
+            <li class="finished">Get Driver License</li>
+            <li class="finished">Conduct Research</li>
+            <li class="finished">Take GRE</li>
+            <li>Get a Summer Internship</li>
+            <li>Change a HairStyle</li>
+            <li>Travel
+              <ul>
+                <li class="finished">Vancouver, BC</li>
+                <li>Taipei, China</li>
+                <li>Korea</li>
+                <li>Japan</li>
+                <li>Europe</li>
+                <li>Los Angeles</li>
+                <li>Toronto</li>
+              </ul>
+            </li>
+            <li>Have a  cat</li>
+            <li>Design My Own Room</li>
+          </ul>
+        </section>
+      </section>
+
+      <section id="favourite">
+        <h2>My Favorite Things</h2>
+        <h3>Take a Guess and Click the Description to check!</h3>
+        <h4>Favorite Animal and Food</h4>
+        <section>
+          <section>
+            <!-- I got the image of mysterbox from https://bearbuggy.com/products/mystery-box -->
+            <img id="box1" src="img/mysterybox.png" alt="Mystery Box">
+            <p>a creature of loyalty and prestige</p>
+          </section>
+          <section>
+            <img id="box2" src="img/mysterybox.png" alt="Mystery Box">
+            <p>beautiful and capricious creature</p>
+          </section>
+          <section>
+            <img id="box3" src="img/mysterybox.png" alt="Mystery Box">
+            <p>lively and passionate creature</p>
+          </section>
+          <section>
+            <img id="box4" src="img/mysterybox.png" alt="Mystery Box">
+            <p>Good for winter and may be spicy</p>
+          </section>
+          <section>
+            <img id="box5" src="img/mysterybox.png" alt="Mystery Box">
+            <p>I like it raw and fresh</p>
+          </section>
+          <section>
+            <img id="box6" src="img/mysterybox.png" alt="Mystery Box">
+            <p>Always found in food courts</p>
+          </section>
+        </section>
+      </section>
+
+      <section id="drawing">
+        <h2>My Drawings</h2>
+        <section>
+          <img src="img/drawing1.jpg" alt="Fragments of a Lady's Eyes, Lips and Hand">
+          <img src="img/drawing4.jpg"
+            alt="A Cat With Combination of Polygans with Different Lines, Dots and Colors">
+          <img src="img/drawing2.jpg" alt="City and Sky at Night">
+          <img src="img/drawing3.jpg" alt="City and Sky at Dusk">
+        </section>
+      </section>
+    </main>
+    <footer>
+      <hr>
+      <p>Jokes are from the <a href="http://www.icndb.com/api/">Chuck Norris (ICNDb) API</a></p>
+    </footer>
+  </body>
+</html>
