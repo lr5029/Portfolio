@@ -17,4 +17,4 @@ Website available at http://localhost:8000/index.html
 | feedback.db           | The database used to run the project, including all relevant tables. |
 | public/index.js    | The client-side JavaScript that will call the API built in app.js and provide frontend behavior for the required features.  |
 | public/index.html  | The HTML for your frontend. It's assumed that this file is the "homepage", or starting place for the entire frontend. |
-| public/styles.css     | The CSS styles for your frontend. |
+| public/styles.css     | The CSS styles for my frontend. |
